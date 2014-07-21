@@ -1,0 +1,22 @@
+default_bits = <%= @key_bits %>
+distinguished_name = req_distinguished_name
+prompt = no
+[ req_distinguished_name ]
+<% if @cert_country -%>
+  countryName = <%= @cert_country %>
+<% end -%>
+<% if @cert_state -%>
+  stateOrProvinceName = <%= @cert_state %>
+<% end -%>
+<% if @cert_locality -%>
+  localityName = <%= @cert_locality %>
+<% end -%>
+<% if @cert_organization -%>
+  organizationName = <%= @cert_organization %>
+<% end -%>
+<% @cert_common_names.each_with_index do |common_name, index| -%>
+  <%= index %>.commonName = <%= common_name %>
+<% end -%>
+<% if @cert_email_address -%>
+  emailAddress = <%= @cert_email_address %>
+<% end -%>
