@@ -1,3 +1,11 @@
+2014-07-31  Romain Lenglet  <romain.lenglet@berabera.info>
+
+	* README.markdown, manifests/self_signed_certificate.pp: Store
+	certificates in /etc/ssl instead of /etc/ssl/certs, since that
+	directory is reserved for CA certs on Debian, cf. Debian bug
+	#608719.
+	* Modulefile, metadata.json: Increase version number to 0.1.1.
+
 2014-07-20  Romain Lenglet  <romain.lenglet@berabera.info>
 
 	* Initial version.

@@ -1,5 +1,5 @@
 name 'rlenglet-openssl'
-version '0.1.0'
+version '0.1.1'
 source 'https://github.com/rlenglet/puppet-openssl.git'
 project_page 'https://github.com/rlenglet/puppet-openssl'
 author 'Romain Lenglet'

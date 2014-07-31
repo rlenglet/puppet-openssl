@@ -34,7 +34,7 @@ master's `modulepath` as the location to install the module.
 ###What openssl affects
 
 * RSA keypairs in `/etc/ssl/private`.
-* X.509 certificates in `/etc/ssl/certs`.
+* X.509 certificates in `/etc/ssl`.
 
 ###Beginning with openssl
 
@@ -42,7 +42,7 @@ Specify a resource of type `openssl::self_signed_certificate` to generate an
 RSA keypair and self-signed X.509 certificate files of the same name.
 
 For instance, a resource names `apache` creates files named
-`/etc/ssl/private/apache.key` and `/etc/ssl/certs/apache.pem`:
+`/etc/ssl/private/apache.key` and `/etc/ssl/apache.pem`:
 
     openssl::self_signed_certificate { apache:
       key_bits => 2048,
@@ -115,10 +115,10 @@ The X.509 certificate's contact email address.  Optional.
 
 ##Limitations
 
-The keypair file is created in `/etc/ssl/private`, and the certificate is
-created in `/etc/ssl/certs`, which are the standard directories on
+The keypair file is created in `/etc/ssl/private`, and the certificate
+is created in `/etc/ssl`, which are the standard directories on
 Debian/Ubuntu.  The files are named after the resource:
-`/etc/ssl/private/<name>.key` and `/etc/ssl/certs/<name>.pem`.  Certificate
+`/etc/ssl/private/<name>.key` and `/etc/ssl/<name>.pem`.  Certificate
 files are owned by `root:root`, and have permissions `0644`.
 
 The generated keypair and certificate files are not protected: if any

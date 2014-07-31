@@ -3,10 +3,10 @@
 # Generates an RSA keypair and a self-signed X.509 certificate using OpenSSL.
 #
 # The keypair file is created in /etc/ssl/private, and the certificate is
-# created in /etc/ssl/certs, which are the standard directories on
+# created in /etc/ssl, which are the standard directories on
 # Debian/Ubuntu.  The files are named after the resource:
-# /etc/ssl/private/<name>.key and /etc/ssl/certs/<name>.pem.  Certificate
-# files are owned by root:root, and have permissions 0644.
+# /etc/ssl/private/<name>.key and /etc/ssl/<name>.pem.  Certificate files are
+# owned by root:root, and have permissions 0644.
 #
 # The generated keypair and certificate files are not protected: if any
 # parameter is changed, they are re-generated.
@@ -103,7 +103,7 @@ define openssl::self_signed_certificate (
 
   $openssl_cnf = "${::puppet_vardir}/openssl/${name}.cnf"
   $key = "/etc/ssl/private/${name}.key"
-  $cert = "/etc/ssl/certs/${name}.pem"
+  $cert = "/etc/ssl/${name}.pem"
 
   file { $openssl_cnf:
     content => template("${module_name}/openssl.cnf.erb"),
