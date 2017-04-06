@@ -60,6 +60,10 @@ For instance, a resource names `apache` creates files named
 
 ####Parameters
 
+#####`key_path`
+The path of the key file. In not specified, defaults to
+/etc/ssl/private/${name}.key
+
 #####`key_bits`
 
 The number of bits of the RSA public key to generate.  If not specified,
@@ -79,6 +83,10 @@ name or a group ID.  If not specified, defaults to `root`.
 
 The desired permissions mode for the keypair file, in symbolic or numeric
 notation.  If not specified, defaults to `0600`.
+
+#####`cert_path`
+
+The path of the cert file. If not specified, defaults to /etc/ssl/${name}.pem
 
 #####`cert_days`
 

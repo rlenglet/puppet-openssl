@@ -13,13 +13,17 @@
 #
 # === Parameters
 #
+# [*key_path*]
+#  The path of the key file. In not specified, defaults to
+#  /etc/ssl/private/${name}.key
+#
 # [*key_bits*]
 #   The number of bits of the RSA public key to generate.  If not specified,
 #   defaults to 1024.
 #
 # [*key_owner*]
 #   The user to whom the keypair file should belong.  Argument can be a user
-# name or a user ID.  If not specified, defaults to "root".
+#   name or a user ID.  If not specified, defaults to "root".
 #
 # [*key_group*]
 #   The group to whom the keypair file should belong.  Argument can be a group
@@ -28,6 +32,10 @@
 # [*key_mode*]
 #   The desired permissions mode for the keypair file, in symbolic or numeric
 #   notation.  If not specified, defaults to "0600".
+#
+# [*cert_path*]
+#   The path of the cert file. If not specified, defaults to
+#   /etc/ssl/${name}.pem
 #
 # [*cert_days*]
 #   The validity period of the X.509 certificate, in days.  If not specified,
