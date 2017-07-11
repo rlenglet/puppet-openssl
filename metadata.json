@@ -8,11 +8,27 @@
   "description": "Manages certificates using OpenSSL",
   "project_page": "https://github.com/rlenglet/puppet-openssl",
   "operatingsystem_support": [
-    {
-      "operatingsystem": "Debian"
-    },
-    {
-      "operatingsystem": "Ubuntu"
-    }
-  ]
+     {
+        "operatingsystem": "Debian"
+      },
+      {
+        "operatingsystem": "Ubuntu"
+      }
+      {
+        "operatingsystem": "RedHat",
+        "operatingsystemrelease": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "operatingsystem": "CentOS",
+        "operatingsystemrelease": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+  ],
 }
