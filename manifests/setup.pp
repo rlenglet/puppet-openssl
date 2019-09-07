@@ -24,4 +24,12 @@ class openssl::setup {
     group  => root,
     mode   => '0700',
   }
+
+  file { "/etc/ssl/private":
+    ensure => directory,
+    owner  => root,
+    group  => root,
+    mode   => '0700',
+  }
+
 }
